@@ -1,0 +1,23 @@
+spring:
+    application:
+        name: consumer-feign
+server:
+    port: 9041
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:9001/eureka/
+hystrix:
+    command:
+        default:
+           execution:
+              isolation:
+                 thread:
+                    timeoutInMilliseconds: 2000
+feign:
+    hystrix:
+        enabled: true
+
+#ribbon:
+#    ConnectTimeout: 10000
+#    ReadTimeout: 10000
