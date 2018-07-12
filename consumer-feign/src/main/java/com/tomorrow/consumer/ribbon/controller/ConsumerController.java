@@ -23,11 +23,11 @@ public class ConsumerController {
 	@RequestMapping(value = "/hello", method = RequestMethod.GET)
 	public String consumer(String name) {
 		System.out.println(new Date() + "&&&&&&&&&&&&&&&&&");
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(3000);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
 		return serviceAFeignClient.hello(name);
 	}
 
