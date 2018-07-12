@@ -13,14 +13,14 @@ import java.util.Date;
 @RestController
 public class HelloController {
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/hello", method = RequestMethod.GET)
 	public String hello(String name) {
-		System.out.println("**************");
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		System.out.println(new Date() + "**************");
+//		try {
+//			Thread.sleep(3000);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
 		return "service-a:" + new Date() + "hello," + name + "!!!";
 	}
 }

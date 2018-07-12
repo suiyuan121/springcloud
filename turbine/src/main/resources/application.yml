@@ -1,0 +1,16 @@
+spring :
+    application:
+       name: turbine
+server :
+    port: 9081
+
+eureka :
+    client:
+       serviceUrl :
+           defaultZone : http://www.host1.com:9001/eureka/,http://www.host2.com:9002/eureka/
+
+turbine:
+    app-config: gateway,consumer-feign,service-a
+    combine-host-port: true
+    cluster-name-expression: "'default'"
+

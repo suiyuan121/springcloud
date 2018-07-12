@@ -1,25 +1,38 @@
 spring:
    application:
       name: gateway
+#spring.cloud.loadbalancer.retry.enabled=true
+zuul:
+   retryable: true
+#   routes:
+#      consumer-feign: /consumer-feign/**
+
+
+#   host:
+#     connect-timeout-millis: 60000
+#     socket-timeout-millis: 60000
+
 server:
    port: 9031
+
 eureka:
    client:
-      serviceUrl.defaultZone: http://localhost:9001/eureka/
+      serviceUrl:
+         defaultZone: http://www.host1.com:9001/eureka/,http://www.host2.com:9002/eureka/
 hystrix:
    command:
       default:
          execution:
             isolation:
                thread:
-                  timeoutInMilliseconds: 10000
-#zuul:
-#   host:
-#     connect-timeout-millis: 60000
-#     socket-timeout-millis: 60000
-
+                  timeoutInMilliseconds:20000
+#CommonClientConfigKey
 ribbon:
-   ConnectTimeout: 10000
-   ReadTimeout: 10000
+   ConnectTimeout: 20000
+   ReadTimeout: 2000
+   MaxAutoRetries: 1
+   MaxAutoRetriesNextServer: 1
+#ribbon.okToRetryOnAllOperations=true
 
+#HystrixCommandProperties
 #hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds   默认一秒

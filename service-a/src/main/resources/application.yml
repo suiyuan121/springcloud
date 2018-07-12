@@ -3,6 +3,8 @@ spring:
       name: service-a
 server:
    port: 9011
+ #  port: ${random.int[10000,19999]}
+
 eureka:
    client:
-      serviceUrl.defaultZone: http://localhost:9001/eureka/
+      serviceUrl.defaultZone: http://www.host1.com:9001/eureka/,http://www.host2.com:9002/eureka/

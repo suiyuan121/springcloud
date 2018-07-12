@@ -1,0 +1,10 @@
+server:
+    port: 9002
+
+eureka:
+    instance:
+       hostname: www.host2.com
+    client:
+       registerWithEureka: false
+       fetchRegistry: false
+       serviceUrl.defaultZone: http://www.host1.com:9001/eureka/

@@ -20,8 +20,14 @@ public class ConsumerController {
 	@Autowired
 	private ServiceAFeignClient serviceAFeignClient;
 
-	@RequestMapping(value = "/fallback", method = RequestMethod.GET)
+	@RequestMapping(value = "/hello", method = RequestMethod.GET)
 	public String consumer(String name) {
+		System.out.println(new Date() + "&&&&&&&&&&&&&&&&&");
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		return serviceAFeignClient.hello(name);
 	}
 
@@ -30,7 +36,7 @@ public class ConsumerController {
 	@FeignClient(value = "service-a", fallback = ServiceAFeignClientFallback.class)
 	public interface ServiceAFeignClient {
 
-		@RequestMapping(method = RequestMethod.GET, value = "/")
+		@RequestMapping(method = RequestMethod.GET, value = "/hello")
 		String hello(@RequestParam("name") String name);
 
 	}
