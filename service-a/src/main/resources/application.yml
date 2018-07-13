@@ -7,4 +7,4 @@ server:
 
 eureka:
    client:
-      serviceUrl.defaultZone: http://www.host1.com:9001/eureka/,http://www.host2.com:9002/eureka/
+      serviceUrl.defaultZone: http://eurekaserver:9001/eureka/,http://www.host2.com:9002/eureka/

@@ -10,7 +10,8 @@ services:
     image: gateway
     ports:
      - "9031:9031"
+    links:
+     - eurekaserver
   
-
 
 #build 是路径

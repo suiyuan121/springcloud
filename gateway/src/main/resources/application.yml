@@ -18,7 +18,7 @@ server:
 eureka:
    client:
       serviceUrl:
-         defaultZone: http://www.host1.com:9001/eureka/,http://www.host2.com:9002/eureka/
+         defaultZone: http://eurekaserver:9001/eureka/,http://eurekaserver.com:9002/eureka/
 hystrix:
    command:
       default:

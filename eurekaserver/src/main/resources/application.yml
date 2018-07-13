@@ -3,8 +3,9 @@ server:
 
 eureka:
     instance:
-       hostname: www.host1.com
+       hostname: eurekaserver
+       prefer-ip-address: true
     client:
        registerWithEureka: false
        fetchRegistry: false
-       serviceUrl.defaultZone: http://www.host2.com:9002/eureka/
+       serviceUrl.defaultZone: http://eurekaserver:9002/eureka/
