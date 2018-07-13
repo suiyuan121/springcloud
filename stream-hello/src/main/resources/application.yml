@@ -6,6 +6,11 @@ spring :
        port : 5672
 #       username: guest
 #       password: guest
+    cloud:
+       stream:
+          bindings:
+             input:
+                group: group-a
 server :
     port: 9071
 

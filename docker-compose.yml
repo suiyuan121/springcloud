@@ -1,0 +1,16 @@
+version: '2.1'
+services:
+  eurekaserver:
+    build: eurekaserver
+    image: eurekaserver
+    ports:
+     - "9001:9001"
+  gateway:
+    build: gateway
+    image: gateway
+    ports:
+     - "9031:9031"
+  
+
+
+#build 是路径

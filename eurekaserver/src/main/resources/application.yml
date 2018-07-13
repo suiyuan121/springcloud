@@ -3,7 +3,7 @@ server:
 
 eureka:
     instance:
-       hostname: host1.com
+       hostname: www.host1.com
     client:
        registerWithEureka: false
        fetchRegistry: false
